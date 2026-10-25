@@ -8,7 +8,7 @@ const { chromium, devices } = require('playwright');
  const canvas=page.locator('.maplibregl-canvas');
  if(!await canvas.count() || !await canvas.isVisible()) throw Error('Map canvas not visible; errors: '+errors.join('; '));
  await page.locator('[data-era="1659"]').click();
- if(!await page.locator('[data-era="1659"]').getAttribute('aria-pressed')==='true') throw Error('Era selection not applied');
+ if((await page.locator('[data-era="1659"]').getAttribute('aria-pressed'))!=='true') throw Error('Era selection not applied');
  await page.getByText('स्वराज्याचा विस्तार',{exact:true}).first().click();
  if(!await page.locator('#fort-name').textContent().then(s=>s.includes('१६५९'))) throw Error('Extent year out of sync');
  await page.screenshot({path:'map-android.png',fullPage:true});
