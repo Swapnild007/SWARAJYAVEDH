@@ -50,7 +50,7 @@ document.addEventListener('click',event=>{const button=event.target.closest('#ti
 @media(max-width:600px){#timeline .chronology{padding-left:19px;margin-left:5px}#timeline .chronology-item{padding-left:16px}#timeline .timeline-marker{left:-25px}.reference-shelf ul{grid-template-columns:1fr}}
 `;document.head.appendChild(style);
 
-const reader=book?.querySelector('#reader-pages'),tocNav=book?.querySelector('.reader-index'),pagination=book?.querySelector('.reader-pagination');
+const bookSection=document.getElementById('book');const reader=bookSection?.querySelector('#reader-pages'),tocNav=bookSection?.querySelector('.reader-index'),pagination=bookSection?.querySelector('.reader-pagination');
 const openingAddenda={
 'हा ग्रंथ का वाचावा?':'<p>या ग्रंथाचा केंद्रबिंदू एका व्यक्तीची स्तुती करणे किंवा एका घटनेत संपूर्ण इतिहास बंदिस्त करणे नाही. स्वराज्याची उभारणी समजण्यासाठी राज्यकारभार, किल्ले, स्थानिक समाज, नातेसंबंध आणि समकालीन सत्तांतील संघर्ष यांचा परस्पर संबंध पाहावा लागतो.</p><p>म्हणून प्रत्येक अध्यायात कथनाबरोबर स्रोताचा प्रकार आणि त्याची मर्यादा दिली जाईल. इतिहासातील रिकामी जागा कल्पनेने भरली जाणार नाही; प्रश्न अनुत्तरित असतील तर ते तसेच नोंदवले जातील.</p>',
 'प्रस्तावना':'<p>स्रोतांची तुलना करताना एकाच घटनेविषयीच्या वेगवेगळ्या नोंदी वेगळ्या ठेवणे आवश्यक आहे. शकावली कालक्रमासाठी मदत करू शकते; बखर घटना सांगते पण तिचा लेखनकाळ आणि आश्रय तपासावा लागतो; पत्राचा मजकूर वापरताना मूळ प्रत, संपादन आणि दिनांक समजून घ्यावा लागतो.</p><p>या आवृत्तीत प्रत्येक दावा क्रमशः तपासला जाईल. संदर्भग्रंथातील पान क्रमांक न मिळाल्यास तो बनवून दिला जाणार नाही; उपलब्ध दुय्यम संदर्भाला प्राथमिक पुरावा म्हणून दाखवले जाणार नाही.</p>',
