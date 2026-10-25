@@ -49,4 +49,26 @@ document.addEventListener('click',event=>{const button=event.target.closest('#ti
 .reference-shelf li a span{font-size:13px;line-height:1.65;color:#65594b}
 @media(max-width:600px){#timeline .chronology{padding-left:19px;margin-left:5px}#timeline .chronology-item{padding-left:16px}#timeline .timeline-marker{left:-25px}.reference-shelf ul{grid-template-columns:1fr}}
 `;document.head.appendChild(style);
+
+const reader=book?.querySelector('#reader-pages'),tocNav=book?.querySelector('.reader-index'),pagination=book?.querySelector('.reader-pagination');
+const openingAddenda={
+'हा ग्रंथ का वाचावा?':'<p>या ग्रंथाचा केंद्रबिंदू एका व्यक्तीची स्तुती करणे किंवा एका घटनेत संपूर्ण इतिहास बंदिस्त करणे नाही. स्वराज्याची उभारणी समजण्यासाठी राज्यकारभार, किल्ले, स्थानिक समाज, नातेसंबंध आणि समकालीन सत्तांतील संघर्ष यांचा परस्पर संबंध पाहावा लागतो.</p><p>म्हणून प्रत्येक अध्यायात कथनाबरोबर स्रोताचा प्रकार आणि त्याची मर्यादा दिली जाईल. इतिहासातील रिकामी जागा कल्पनेने भरली जाणार नाही; प्रश्न अनुत्तरित असतील तर ते तसेच नोंदवले जातील.</p>',
+'प्रस्तावना':'<p>स्रोतांची तुलना करताना एकाच घटनेविषयीच्या वेगवेगळ्या नोंदी वेगळ्या ठेवणे आवश्यक आहे. शकावली कालक्रमासाठी मदत करू शकते; बखर घटना सांगते पण तिचा लेखनकाळ आणि आश्रय तपासावा लागतो; पत्राचा मजकूर वापरताना मूळ प्रत, संपादन आणि दिनांक समजून घ्यावा लागतो.</p><p>या आवृत्तीत प्रत्येक दावा क्रमशः तपासला जाईल. संदर्भग्रंथातील पान क्रमांक न मिळाल्यास तो बनवून दिला जाणार नाही; उपलब्ध दुय्यम संदर्भाला प्राथमिक पुरावा म्हणून दाखवले जाणार नाही.</p>',
+'भोसले घराणे आणि वंशवेल':'<p>मराठी विश्वकोशाच्या घराणे-नोंदीनुसार बाबाजी भोसले हे या घराण्यातील पहिले ज्ञात पुरुष; त्यांचे पुत्र मालोजी आणि विठोजी होते. मालोजींचे पुत्र शहाजी आणि शरीफजी अशी नोंद दिली आहे. ही माहिती घराण्याच्या ज्ञात ऐतिहासिक टप्प्याची ओळख देते; त्यापूर्वीच्या सर्व पिढ्या सिद्ध करते असा तिचा अर्थ नाही.</p><p>नोंद शिसोदे-भोसले संबंधाचा स्वतंत्र ऐतिहासिक पुरावा नसल्याचेही सांगते. म्हणून वंशवेलीतील रिकाम्या जागा दंतकथा किंवा प्रतिष्ठेच्या परंपरेवरून भरल्या जाणार नाहीत. <a href="https://vishwakosh.marathi.gov.in/28254/" target="_blank" rel="noopener noreferrer">मराठी विश्वकोश · भोसले घराणे ↗</a></p>',
+'जाधव घराणे आणि वंशवेल':'<p>सिंदखेडराजा आणि जाधव घराण्याच्या संदर्भात लखुजी जाधवराव हे जिजाबाईंचे वडील आणि शिवाजी महाराजांचे मातुल आजोबा म्हणून येतात. उपलब्ध परिचयात्मक नोंद त्यांच्या निजामशाही आणि मुघल सेवांतील बदलत्या संबंधांचा उल्लेख करते; अशा बदलांना त्या काळच्या सत्तासंघर्षाच्या संदर्भातच वाचणे योग्य ठरते.</p><p>ही निवडक नातेसंबंधांची आकृती आहे, संपूर्ण जाधव वंशावळ नाही. स्मारकावरील लेख किंवा शिलालेखाचा प्रत्यक्ष मजकूर व आवृत्ती तपासल्यावरच इतर पिढ्या जोडल्या जातील. <a href="https://vishwakosh.marathi.gov.in/25765/" target="_blank" rel="noopener noreferrer">मराठी विश्वकोश · सिंदखेड राजा ↗</a></p>',
+'शहाजीराजे आणि जिजाऊसाहेब':'<p>मराठी विश्वकोशाच्या जिजाबाई नोंदीत त्यांचा जन्म सिंदखेडच्या सरदारकुलात, वडील लखुजी जाधव, आणि शहाजीराजांशी विवाह साधारण १६०९ च्या सुमारास झाल्याचे नमूद आहे. विवाहदिनांकासारखी नोंद “सुमारास” म्हणूनच वाचली पाहिजे.</p><p>शहाजीराजांच्या कारकीर्दीचा स्वतंत्र परिचय आणि जिजाबाईंच्या जीवनावरील नोंदी पुढील लेखनासाठी सुरुवातीचे दुय्यम संदर्भ आहेत. लोकप्रिय संवाद किंवा प्रसंगांना समकालीन पुरावा सापडल्याशिवाय ऐतिहासिक तथ्य मानले जाणार नाही. <a href="https://vishwakosh.marathi.gov.in/33383/" target="_blank" rel="noopener noreferrer">शहाजी ↗</a> · <a href="https://vishwakosh.marathi.gov.in/17124/" target="_blank" rel="noopener noreferrer">जिजाबाई ↗</a></p>',
+'शिवजन्मापूर्वीचा दख्खन':'<p>दख्खनच्या राजकीय नकाशात निजामशाही, आदिलशाही आणि कुतुबशाही यांच्यासह मुघल विस्ताराचा प्रभाव होता. सरदारांची सेवा, जहागिरी, किल्ल्यांचे नियंत्रण आणि स्थानिक अधिकार यांमुळे सत्तेचे संबंध सतत बदलत. पुढील कथनात या रचना एका सरळ “दोन पक्षांच्या” संघर्षात रूपांतरित केल्या जाणार नाहीत.</p><p>या पार्श्वभूमीचा सामाजिक इतिहास—महसूल, शेती, गावव्यवस्था, व्यापार आणि युद्धाचा लोकजीवनावर झालेला परिणाम—स्वतंत्र स्रोतांवरून अधिक विस्ताराने लिहिणे बाकी आहे. सध्याचा मजकूर त्या कामाची सुरुवात आहे.</p>'
+};
+function enhanceOpeningPage(){
+ const article=reader?.querySelector('.reader-page');
+ if(!article)return;
+ const title=article.querySelector('h3')?.textContent?.trim();
+ const html=openingAddenda[title];
+ if(!html||article.dataset.addendum===title)return;
+ const extra=document.createElement('div');extra.className='opening-addendum';extra.innerHTML=html;article.appendChild(extra);article.dataset.addendum=title;
+}
+enhanceOpeningPage();
+tocNav?.addEventListener('click',()=>queueMicrotask(enhanceOpeningPage));
+pagination?.addEventListener('click',()=>queueMicrotask(enhanceOpeningPage));
+const addendumStyle=document.createElement('style');addendumStyle.textContent='.opening-addendum{border-top:1px solid #d7c4a1;margin-top:22px;padding-top:18px}.opening-addendum p{line-height:1.85}.opening-addendum a{color:#74343c}';document.head.appendChild(addendumStyle);
 })();
