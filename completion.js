@@ -64,6 +64,10 @@ function enhanceOpeningPage(){
  const article=reader?.querySelector('.reader-page');
  if(!article)return;
  const title=article.querySelector('h3')?.textContent?.trim();
+ const headings=article.querySelectorAll('h3');
+ headings.forEach((heading,index)=>{if(index>0&&heading.textContent.trim()===title)heading.remove();});
+ const invocations=article.querySelectorAll('.invocation');
+ invocations.forEach((invocation,index)=>{if(index>0)invocation.remove();});
  const html=openingAddenda[title];
  if(!html||article.dataset.addendum===title)return;
  const extra=document.createElement('div');extra.className='opening-addendum';extra.innerHTML=html;article.appendChild(extra);article.dataset.addendum=title;
