@@ -144,3 +144,54 @@ main{flex:1;min-height:0;position:relative}
 #book .reader-pagination{justify-content:center;gap:22px;max-width:1250px;margin:14px auto 0}
 #book .reader-pagination button{min-width:160px;background:#25231e;color:#e9d8b7;border:1px solid #b18e57;padding:11px 15px;font:12px var(--serif);letter-spacing:.02em}
 #book .reader-pagination span{font-size:12px;letter-spacing:.12em;color:#a99a80}
+/* Reader correction: immersive folio sizing, real two-sided leaf turn, and mobile-safe controls. */
+.app:has(#book:not([hidden])) .bottomnav{display:none}
+#book.view{display:flex;flex-direction:column;overflow:hidden;padding:16px clamp(16px,4vw,56px) 8px!important}
+#book .book-head{flex:none;min-height:72px;align-items:center;margin:0 auto 8px;width:100%;max-width:1250px;padding-bottom:10px}
+#book .book-head .lead{max-width:610px}
+#book .reader-index{flex:none;margin-bottom:8px;max-width:1250px}
+#book .book-spread{flex:1;min-height:0;width:100%;overflow:visible;position:relative}
+#book .book-leftpage,#book #reader-pages{min-height:0;height:100%}
+#book #reader-pages{position:relative;isolation:isolate}
+#book #reader-pages:before{content:"";position:absolute;z-index:-1;top:5px;bottom:3px;right:-6px;width:7px;border:1px solid #c8b58f;border-left:0;background:repeating-linear-gradient(0deg,#e5d6b8 0 2px,#f9f1e1 3px 5px);box-shadow:2px 3px 6px #0005}
+#book .manuscript.reader-page{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;border-left:0}
+#book .manuscript.reader-page:after{content:"";position:absolute;right:0;bottom:0;width:42px;height:42px;display:block;float:none;margin:0;background:linear-gradient(135deg,transparent 48%,#d2bf9c 49%,#f4e7cf 58%);clip-path:polygon(100% 0,100% 100%,0 100%);box-shadow:-3px -3px 8px #6e57301c;pointer-events:none}
+#book .reader-pagination{flex:none;width:min(100%,1250px);height:62px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 72px minmax(0,1fr);gap:8px;align-items:center;margin:0 auto;padding:4px 0 max(4px,env(safe-area-inset-bottom))}
+#book .reader-pagination button{width:100%;min-width:0;white-space:nowrap;height:48px}
+#book .reader-pagination span{min-width:0;text-align:center;white-space:nowrap;font-size:12px}
+#book .page-turn-leaf{position:absolute;inset:0;z-index:5;transform-style:preserve-3d;transform-origin:left center;transform:rotateY(0);transition:transform .82s cubic-bezier(.2,.72,.18,1);pointer-events:none}
+#book .page-turn-leaf.reverse{transform-origin:right center}
+#book .page-turn-leaf.forward.is-turning{transform:rotateY(-180deg)}
+#book .page-turn-leaf.reverse.is-turning{transform:rotateY(180deg)}
+#book .leaf-face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 12px 30px #3b2a1940}
+#book .leaf-front{transform:rotateY(0);z-index:2}
+#book .leaf-back{transform:rotateY(180deg);z-index:1}
+#book .page-turn-leaf.reverse .leaf-back{transform:rotateY(-180deg)}
+#book .leaf-face .manuscript.reader-page{height:100%!important;min-height:0!important;overflow:hidden!important;margin:0!important}
+#book .page-turn-leaf.forward.is-turning{box-shadow:inset -30px 0 30px #31241955}
+@media(max-width:820px){
+ #book.view{padding:12px 16px 4px!important}
+ #book .book-head{min-height:64px;display:block;padding-bottom:8px}
+ #book .book-head .lead{font-size:12px;margin-top:3px}
+ #book .book-spread{display:flex}
+ #book .book-leftpage{display:none}
+ #book .manuscript.reader-page{height:100%;min-height:0;border-left:1px solid #cfba92}
+ #book .reader-pagination{grid-template-columns:minmax(0,1fr) 68px minmax(0,1fr);gap:5px;height:58px}
+ #book .reader-pagination button{height:44px;padding:7px 4px;font-size:10px}
+ #book .reader-pagination span{font-size:11px}
+}
+@media(max-width:580px){
+ #book.view{padding:8px 15px 2px!important}
+ #book .book-head{min-height:58px;margin-bottom:4px}
+ #book .book-head .eyebrow{font-size:9px}
+ #book .book-head h2{font-size:23px;line-height:1.4}
+ #book .book-head .lead{font-size:11px;line-height:1.5}
+ #book .reader-index{margin:0 -3px 7px;padding:4px 2px 7px}
+ #book .reader-index span{font-size:9px}
+ #book .reader-index button{font-size:10px;padding:6px 9px}
+ #book .reader-pagination{grid-template-columns:minmax(0,1fr) 62px minmax(0,1fr);gap:4px;height:54px}
+ #book .reader-pagination button{font-size:9px;letter-spacing:0;padding:6px 2px}
+ #book .reader-pagination span{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){#book .page-turn-leaf{transition-duration:.01ms}}
+
