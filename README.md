@@ -1,35 +1,32 @@
-# स्वराज्यवेध | SWARAJYAVEDH
+# स्वराज्यवेध
 
-A mobile-first Marathi digital reading experience for studying Chhatrapati Shivaji Maharaj and the era of Swarajya.
+A mobile-first Marathi digital granth about Chhatrapati Shivaji Maharaj and the historical world around him.
 
-## Current scope
+## Reading order
 
-This repository is a static site hosted on GitHub Pages. It currently includes:
+The reader starts at the cover and proceeds through the opening manuscript in this order:
 
-- A royal manuscript-style landing page that opens directly into the reader.
-- A paginated Marathi opening sequence: why read this book, preface, Bhosale lineage, Jadhav lineage, Shahaji and Jijabai, the pre-Shivaji Deccan, and the opening chapter draft.
-- A small searchable source catalogue with explicit limits on what has and has not been verified.
-- A source-linked chronology. Disputed dates and year-level estimates are labeled; the chronology is not presented as a complete or fully authenticated timeline.
+1. हा ग्रंथ का वाचावा?
+2. प्रस्तावना
+3. भोसले घराणे आणि वंशवेल
+4. जाधव घराणे आणि वंशवेल
+5. शहाजीराजे आणि जिजाऊसाहेब
+6. शिवजन्मापूर्वीचा दख्खन
+7. शिवाजी महाराज कोण?
+8. स्रोतपरिचय
 
-The opening sequence and Chapter 1 are editorial drafts. They are not a completed multi-volume history or a fully authenticated scholarly edition. Page-level references to primary records, cross-checks against the ShivVedh manuscript, and editorial review remain necessary before making that claim.
+Each section has distinct physical pages. The reader supports a two-page desktop spread, a single-page mobile view, page turns, touch swipes, keyboard arrows, chapter navigation, source notes, progress, and resume-reading on the same device.
 
-## Preview
+## Files
 
-Open `index.html` in a browser or serve this repository with any static HTTP server.
+- `index.html` — cover and reader shell.
+- `styles.css` — responsive book, paper and motion design.
+- `content.js` — Marathi manuscript opening and source catalogue.
+- `app.js` — pagination, page turning, navigation and saved progress.
+- `assets/granth-cover.webp` — original cover artwork.
 
-## Structure
+## Editorial status
 
-- `index.html`: semantic Marathi content, reader shell, and navigation
-- `completion.js`: reader entry flow, source-linked chronology, and bibliography links
-- `styles.css`: legacy responsive stylesheet; most current site styling is embedded in `index.html`
-- `script.js`: legacy navigation script; current route and reader behavior are embedded in `index.html`
+This is an opening editorial edition, not a completed biography or a verified archival edition. Claims are kept proportionate to the cited reference. Bakhars, court poetry, chronologies, catalogues and modern reference works are identified by type and limitation. Missing page-level primary citations remain visible work for future research.
 
-## Editorial commitments
-
-1. Research before narrative publication.
-2. Distinguish documented records, interpretations, disputed traditions, and literary reconstruction.
-3. Never invent archival evidence, quotations, or page references.
-4. Preserve independent original prose and attribution.
-5. Keep unresolved source disagreements visible until they are checked against the relevant editions.
-
-The separate ShivVedh repository is not modified by this project.
+The site has no build step or runtime service. GitHub Pages serves the static files from the repository root.
