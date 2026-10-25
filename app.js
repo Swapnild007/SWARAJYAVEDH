@@ -133,4 +133,5 @@ document.addEventListener('keydown',event=>{
 });
 buildContents();buildSources();
 if(current>0)byId('resume-reading').hidden=false;
+if(location.hash==='#book')enterReader(current);
 })();
