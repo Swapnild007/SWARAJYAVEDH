@@ -24,7 +24,7 @@ if(archive&&!document.getElementById('reference-shelf')){
  ].map(x=>'<li><a href="'+x[2]+'" target="_blank" rel="noopener noreferrer"><strong>'+x[0]+' ↗</strong><span>'+x[1]+'</span></a></li>').join('')+'</ul><p class="editorial-note">संदर्भ-दुवा उघडल्याने त्यातील प्रत्येक विधान स्वतंत्रपणे प्रमाणित झाले असे होत नाही. हस्तलिखितातील दाव्यांना आवृत्ती, पृष्ठ आणि स्रोतप्रकार जोडणे पुढील संपादकीय काम आहे.</p>';
  const grid=document.getElementById('source-grid');if(grid)grid.after(shelf);else archive.appendChild(shelf);
 }
-const style=document.createElement('style');style.textContent=`
+document.addEventListener('click',event=>{const button=event.target.closest('#timeline .actions [data-go]');if(button)location.hash='#'+button.dataset.go;});\nconst style=document.createElement('style');style.textContent=`
 #timeline .timeline-legend{display:flex;flex-wrap:wrap;gap:16px;margin:22px 0;color:#685b4b;font-size:13px}
 #timeline .timeline-legend span{display:flex;align-items:center;gap:7px}
 #timeline .legend-dot,.timeline-marker{display:inline-block;width:10px;height:10px;border-radius:50%;background:#7a343b;border:2px solid #f6ead2;box-shadow:0 0 0 1px #7a343b}
